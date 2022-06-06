@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React from 'react';
+import Button from './components/Button'
+import OutputScreen from './components/OutputScreen'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class Calculator extends React.Component { 
+  render()
+    {
+        return (
+            <div className="frame" style={{width:"400px"}}>
+                <div className="mainCalc">
+                    <OutputScreen /> 
+                    <table cellPadding={0} cellSpacing={0}>
+                    <tr>
+                        <td><Button className="btn" label={'AC'}/></td>
+                        <td><Button className="btn" label={'+/-'}/></td>
+                        <td><Button className="btn" label={'%'}/></td>
+                        <td><Button className="btnaction" label={'÷'}/></td>
+                    </tr>
+                    <tr>
+                        <td><Button className="btnaction1" label={'7'} /></td>
+                        <td><Button className="btnaction1" label={'8'} /></td>
+                        <td><Button className="btnaction1" label={'9'} /></td>
+                        <td><Button className="btnaction" label={'x'} /></td>
+                    </tr>
+                    <tr>
+                        <td><Button className="btnaction1" label={'4'} /></td>   
+                        <td><Button className="btnaction1" label={'5'} /></td>
+                        <td><Button className="btnaction1" label={'6'} /></td>
+                        <td><Button className="btnaction" label={'-'} /></td>
+                    </tr>
+                    <tr>
+                        <td><Button className="btnaction1" label={'1'} /></td>
+                        <td><Button className="btnaction1" label={'2'} /></td>
+                        <td><Button className="btnaction1" label={'3'} /></td>
+                        <td><Button className="btnaction" label={'+'} /></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colSpan={2}><Button className="btnaction2" label={'0'} /></td>
+                        
+
+                        <td><Button className="btnaction1" label={','} /></td>
+                        <td><Button className="btnaction" label={'='}/></td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        );
+  }
 }
 
-export default App;
+export default Calculator;

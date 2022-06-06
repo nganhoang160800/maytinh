@@ -1,38 +1,69 @@
-.App {
+input[type="button"]:active{
+  background: #a75812;
+}
+
+.screen-row {
+  
+  background: #8a8888 !important;
+  color: #ffffff;
+  font-size: 40px;
+  padding: 20px;
+  text-align: right;
+}
+.btn:active{
+  background-color: #a75812;
+}
+.btn{
+  background-color: rgb(116, 113, 108) !important;
+  width: 100px;
+  background: #a1a19e;
+  border: 1px solid #222;
+  height: 64px;
+  color: rgb(77, 75, 75);
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
   color: white;
+  font-weight: bold;
 }
-
-.App-link {
-  color: #61dafb;
+.btnaction1
+{
+  width: 100px;
+  background: #a1a19e;
+  border: 1px solid #222;
+  height: 64px;
+  color: rgb(77, 75, 75);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btnaction2{
+  width: 200px;
+  background: #a1a19e;
+  border: 1px solid #222;
+  height: 64px;
+  color: rgb(77, 75, 75);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+.btnaction{
+  width: 100px;
+  background: #ee9624;
+  border: 1px solid #222;
+  height: 64px;
+  color: rgb(77, 75, 75);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
 }
