@@ -65,7 +65,7 @@ class App extends React.Component {
                         <td><Button className="btnaction1" label={'1'} handleClick ={this.handleClick}/></td>
                         <td><Button className="btnaction1" label={'2'} handleClick ={this.handleClick}/></td>
                         <td><Button className="btnaction1" label={'3'}  handleClick={this.handleClick}/></td>
-                        <td><Button className="btnaction" label={'+'}  handleClick={this.handleClick}/></td>
+                        <td><Button className="btnaction" label={'+'}  handleClick={this.handleClick}/></td> 
                     </tr>
                     
                     <tr>
