@@ -1,5 +1,10 @@
-input[type="button"]:active{
-  background: #a75812;
+input[type="text"]{
+  background: #8a8888 !important;
+  color: #ffffff;
+  font-size: 28px;
+  padding: 10px;
+  text-align: right;
+
 }
 
 .screen-row {
@@ -11,7 +16,7 @@ input[type="button"]:active{
   text-align: right;
 }
 .btn:active{
-  background-color: #a75812;
+  background-color: #a75812 !important;
 }
 .btn{
   background-color: rgb(116, 113, 108) !important;

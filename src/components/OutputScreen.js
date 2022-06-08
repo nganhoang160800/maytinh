@@ -1,11 +1,12 @@
 import React from 'react';
 
-const OutputScreenRow = (props) => {
+const OutputScreen = (props) => {
     return (
         <div className="screen-row">
-            0
+             <input type="text" readOnly value = {props.data}/>
+            
         </div>
     )
 }
 
-export default OutputScreenRow;
+export default OutputScreen;
