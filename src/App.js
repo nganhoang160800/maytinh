@@ -13,10 +13,10 @@ class App extends React.Component {
 
     calculate = () => {
         try {
-            const result = eval(this.state.data);
+            const result = eval((this.state.data).replace(/%/g,'/100'));
             this.setState({data: result});
         } catch (e) {
-            this.setState({data: 'error'})
+            this.setState({data: ''})
         }
     }
 
@@ -33,6 +33,12 @@ class App extends React.Component {
                 this.setState({data:this.state.data.slice(0, -1)})
                 break;
             default:
+                if (this.state.data==='0')
+                {
+                    if(value!=='0') this.setState({ data: this.state.data + value});
+
+                }
+                else
                 this.setState({ data: this.state.data + value});
         }
     }

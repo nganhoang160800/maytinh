@@ -1,9 +1,12 @@
 input[type="text"]{
   background: #8a8888 !important;
-  color: #ffffff;
-  font-size: 28px;
-  padding: 10px;
+  color: #ffffff ;
+  font-size: 28px ;
+  /* padding-left: 10px ;
+  padding-bottom: 30px;
+  padding-top: 20px; */
   text-align: right;
+  border: 1px;
 
 }
 
@@ -16,7 +19,7 @@ input[type="text"]{
   text-align: right;
 }
 .btn:active{
-  background-color: #a75812 !important;
+  background-color: #cb7614 !important;
 }
 .btn{
   background-color: rgb(116, 113, 108) !important;
