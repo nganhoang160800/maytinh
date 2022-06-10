@@ -1,14 +1,19 @@
 input[type="text"]{
   background: #8a8888 !important;
-  color: #ffffff ;
+  color: #e7eee6 ;
   font-size: 28px ;
-  /* padding-left: 10px ;
+  padding-left: 10px ;
   padding-bottom: 30px;
-  padding-top: 20px; */
+  padding-top: 20px;
   text-align: right;
-  border: 1px;
-
+  border: none;
+  display:block;
+  outline:none;
 }
+
+
+
+
 
 .screen-row {
   
