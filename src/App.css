@@ -12,9 +12,6 @@ input[type="text"]{
 }
 
 
-
-
-
 .screen-row {
   
   background: #8a8888 !important;
@@ -26,6 +23,7 @@ input[type="text"]{
 .btn:active{
   background-color: #cb7614 !important;
 }
+
 .btn{
   background-color: rgb(116, 113, 108) !important;
   width: 100px;

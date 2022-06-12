@@ -14,9 +14,9 @@ class App extends React.Component {
     calculate = () => {
         try {
             const result = eval((this.state.data).replace(/%/g,'/100'));
-            this.setState({data: result});
+            this.setState({data: result.toString()});
         } catch (e) {
-            this.setState({data: ''})
+            this.setState({data: 'Math Error'})
         }
     }
 
@@ -33,13 +33,68 @@ class App extends React.Component {
                 this.setState({data:this.state.data.slice(0, -1)})
                 break;
             default:
-                if (this.state.data==='0')
+                //data=Math Error hoặc Infinity->nhập số chuyển thành giá trị số vừa nhập
+                if(this.state.data==='Math Error'||this.state.data==='Infinity')
                 {
-                    if(value!=='0') this.setState({ data: this.state.data + value});
-
+                    this.setState({data:value})
                 }
                 else
-                this.setState({ data: this.state.data + value});
+                {
+                    //data=0 nhập tiếp
+                    if (this.state.data==='0')
+                    {
+                    //check trường hợp 00
+                        if(value!=='0') 
+                        { //trường hợp 0. 0+ 0- ...
+                            if(value==='.'||value==='+'||value==='-'||value==='*'||value==='/'||value==='%')
+                            this.setState({data:this.state.data +value})
+                        //05->5
+                      else this.setState({ data: value});
+                        }
+                    
+                    }
+                    else 
+                    //check trường hợp nhiều phép tính : 1+++, ...
+                    if(this.state.data.slice(-1)==='+'|| this.state.data.slice(-1)==='-'||this.state.data.slice(-1)==='*'||this.state.data.slice(-1)==='/')
+                    { 
+                        if(value!=='+'&& value!=='-'&& value!=='*'&& value!=='/'&& value!=='%')
+                        {
+                            this.setState({data:this.state.data+value})
+                        }
+                    }
+                    else 
+                    // check trường hợp 1%1 --> 1%*1
+                    if(this.state.data.slice(-1)==='%')
+                    { 
+                        if(value!=='+'&& value!=='-'&& value!=='*'&& value!=='/'&& value!=='%')
+                        {
+                            this.setState({data:this.state.data+'*'+value})
+                        }
+                    }
+                    else 
+                    //check trường hợp 1000, 1+02
+                    if(this.state.data.slice(-1)==='0')
+                    {
+                        if(this.state.data.slice(-2,-1)==='+'||this.state.data.slice(-2,-1)==='-'||this.state.data.slice(-2,-1)==='*'||this.state.data.slice(-2,-1)==='/')
+                        {
+                            if(value!=='0')
+                            {
+                                if(value==='+'||value==='-'||value==='*'||value==='/'||value==='%')
+                                {
+                                    this.setState({data:this.state.data + value})
+                                }
+                                 else
+                                 this.setState({data:this.state.data.slice(0, -1)+value})
+                            }
+                        }
+                        else this.setState({data:this.state.data + value})
+                    }
+                    else
+                    {
+                    this.setState({ data: this.state.data + value});
+                    }
+                }
+                
         }
     }
   render()
