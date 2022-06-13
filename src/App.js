@@ -55,9 +55,9 @@ class App extends React.Component {
                     }
                     else 
                     //check trường hợp nhiều phép tính : 1+++, ...
-                    if(this.state.data.slice(-1)==='+'|| this.state.data.slice(-1)==='-'||this.state.data.slice(-1)==='*'||this.state.data.slice(-1)==='/')
+                    if(this.state.data.slice(-1)==='+'|| this.state.data.slice(-1)==='-'||this.state.data.slice(-1)==='*'||this.state.data.slice(-1)==='/'||this.state.data.slice(-1)==='.')
                     { 
-                        if(value!=='+'&& value!=='-'&& value!=='*'&& value!=='/'&& value!=='%')
+                        if(value!=='+'&& value!=='-'&& value!=='*'&& value!=='/'&& value!=='%'&& value!=='.')
                         {
                             this.setState({data:this.state.data+value})
                         }
