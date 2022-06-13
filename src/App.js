@@ -54,7 +54,8 @@ class App extends React.Component {
                     
                     }
                     else 
-                    //check trường hợp nhiều phép tính : 1+++, ...
+                    {
+                         //check trường hợp nhiều phép tính : 1+++, ...
                     if(this.state.data.slice(-1)==='+'|| this.state.data.slice(-1)==='-'||this.state.data.slice(-1)==='*'||this.state.data.slice(-1)==='/'||this.state.data.slice(-1)==='.')
                     { 
                         if(value!=='+'&& value!=='-'&& value!=='*'&& value!=='/'&& value!=='%'&& value!=='.')
@@ -89,14 +90,29 @@ class App extends React.Component {
                         }
                         else this.setState({data:this.state.data + value})
                     }
-                    else
-                    {
-                    this.setState({ data: this.state.data + value});
+                    else 
+                    
+                        if(value==='.'){
+                            var kq='';
+                            try {
+                                kq=eval(this.state.data+value)
+                            } catch (error) {
+                                kq="Math Error"
+                            }
+                            if (kq!=="Math Error") this.setState({data:this.state.data+=value})
+                        }
+                    else 
+                    this.setState({data:this.state.data+=value})
+                    
+                   
                     }
+                    
+            } 
                 }
                 
-        }
-    }
+             }                 
+                
+        
   render()
     {
         return (
